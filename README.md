@@ -35,6 +35,7 @@ The model was then compiled as such:
  - Fit and evaluated the model
  
  ----------------------------
+ 
 ## Results
 ### Baseline Results
 With 44 features, 16,000 trainable parameters across two hidden layers, and 150 epochs to iterate, the results are as follows:
@@ -52,6 +53,7 @@ Accuracy: 72.56%
 ![Base_Acc](https://user-images.githubusercontent.com/92493572/158045914-94752ade-e900-4d0f-9243-360301f098a3.PNG)
 
 ------------------------------
+
 ### Optimized Results
 Utilized 394 features, 1,100,000 trainable parameters, three hidden layers, and also 150 epochs, the results are as follows:
 
@@ -73,5 +75,26 @@ Accuracy: 78.62%
   - Third hidden layer added with around 525 neurons (all three layers were of sigmoid activation type)
   - Bin for application type was increased from under 100 value counts, to under 700 value counts.
   - Bin for classification type was increased from under 1,250 value counts, to under 1,500 value counts.
+
+-------------------------------
+
+## Secondary Random Forest Analysis
+Sklearn was again used to create a random forest model to test another supervised machine learning method against the data. The random forest used the optimized data, which meant the encoded and binned "NAME" column was included in calculation. The main benefit of using the random forest is that the user can extract feature importances from the model; it is also significantly faster to execute than the neural network. The number of estimators used was 128.
+
+### Results:
+
+![RF_cm_class](https://user-images.githubusercontent.com/92493572/158046595-cd3a901a-3b63-4230-b392-d06bfc9b93ab.PNG)
+
+**Test Results**
+-- Accuracy: 77.2% --
+
+### Top 10 Feature Importances
+
+![RF_Feature_Imp](https://user-images.githubusercontent.com/92493572/158046696-a5a4955c-34ef-4530-b3f4-a19d4167711d.PNG)
+
+### Summary of Random Forest Result
+The random forest model performed about the same as the neural network with a lot less code and time involved in the process. Additionally, it provided feature importances - surprisingly, the ask amount was the weighted much more heavily than any other feature. The next step would be to investigate that more thoroughly. Was it lower or higher ask amounts where the organization failed, or had taken the money and fled? Was there any correlation at all?
+
+--------------------------------
 
 ## Summary
