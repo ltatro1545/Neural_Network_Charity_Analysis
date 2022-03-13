@@ -34,11 +34,16 @@ The model was then compiled as such:
  - Determined adequate model parameters
  - Fit and evaluated the model
  
+ ----------------------------
 ## Results
 ### Baseline Results
 With 44 features, 16,000 trainable parameters across two hidden layers, and 150 epochs to iterate, the results are as follows:
 
 ![Base_NN_Eval](https://user-images.githubusercontent.com/92493572/158045738-1c3fb070-6910-4928-8ef9-810089485bda.PNG)
+
+**Test Results**
+-- Loss: 56.82% --
+Accuracy: 72.56%
 
 #### Historic Loss Across Epochs
 ![Base_Loss](https://user-images.githubusercontent.com/92493572/158045907-c74ed12a-4f87-4bcd-8b3e-03be77c39cf5.PNG)
@@ -46,11 +51,15 @@ With 44 features, 16,000 trainable parameters across two hidden layers, and 150 
 #### Historic Accuracy Across Epochs
 ![Base_Acc](https://user-images.githubusercontent.com/92493572/158045914-94752ade-e900-4d0f-9243-360301f098a3.PNG)
 
-
+------------------------------
 ### Optimized Results
 Utilized 394 features, 1,100,000 trainable parameters, three hidden layers, and also 150 epochs, the results are as follows:
 
 ![Opt_NN_Eval](https://user-images.githubusercontent.com/92493572/158046052-9ff4c0fe-9558-4620-80b3-ba5996c8dec3.PNG)
+
+**Test Results**
+-- Loss: 47.82% --
+Accuracy: 78.62%
 
 #### Historic Loss Across Epochs
 ![Opt_Loss](https://user-images.githubusercontent.com/92493572/158046058-f062c77f-c7fe-4c06-b106-c0e37c25e117.PNG)
@@ -58,6 +67,11 @@ Utilized 394 features, 1,100,000 trainable parameters, three hidden layers, and 
 #### Historic Accuracy Across Epochs
 ![Opt_Acc](https://user-images.githubusercontent.com/92493572/158046066-10a71de7-2156-4c5b-bc7b-62eacd5ad297.PNG)
 
-#### What Changed During Optimization
+### Changes During Optimization
+  - "NAME" column was reconsidered, as many organizations have received funding multiple times, thus have a record of success. Groups with five instances of funding or less were binned into an "Other" group.
+  - Columns "STATUS" and "SPECIAL_CONSIDERATIONS" were dropped due to having vastly imbalanced binary information, providing little information.
+  - Third hidden layer added with around 525 neurons (all three layers were of sigmoid activation type)
+  - Bin for application type was increased from under 100 value counts, to under 700 value counts.
+  - Bin for classification type was increased from under 1,250 value counts, to under 1,500 value counts.
 
-
+## Summary
