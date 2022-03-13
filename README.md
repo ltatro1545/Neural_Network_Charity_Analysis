@@ -5,7 +5,7 @@ Alphabet Soup, a philanthropic foundation, has raised and donated roughly $10B o
 
 ## Baseline Method
 #### Pre-Processing
-After loading in the provided dataset ("Resources/charity_data.csv") to a Jupyter Notebook, exploratory analysis was performed. Initially, columns such as "EIN" (a form of ID number) and the "NAME" column were dropped, as they did not appear to be relevant features in predicting organization success. Various code was used to examine the number of unique values in each column and then to plot the density of those values. This was an important step in determining if features should be binned or not, and, if so, to what degree. After binning "CLASSIFICATION" and "APPLICATION_TYPE", sklearn's OneHotEncoder was used to encode the categorical data. 
+After loading in the provided dataset ("Resources/charity_data.csv") to a Jupyter Notebook, exploratory analysis was performed. Initially, columns such as "EIN" (a form of ID number) and the "NAME" column were dropped, as they did not appear to be relevant features in predicting organization success. Various code was used to examine the number of unique values in each column and then to plot the density of those values. This was an important step in determining if features should be binned or not, and, if so, to what degree. After binning "CLASSIFICATION" and "APPLICATION_TYPE", sklearn's OneHotEncoder was used to encode the categorical data. The encoded dataframe was merged with the original, and then the original categorical columns were dropped. Next, the data was split into features, target, training, and testing batches. The target feature, "IS_SUCCESSFUL", was denoted as variable "y". The data was stratified upon splitting to ensure the balance of the training and testing groups remained in tact.
 
 #### Neural Network Model
 For the baseline neural network model, a sequential model with two hidden layers were used. The first hidden layer multiplied the number of input features by three to determine how many neurons would be present; the second layer multiplied the inputs by 1.75x, then rounded if needed. Both hidden layers and the output layers utilized a sigmoid activation, as we are predicting binary results with it. In total, there were 16,259 parameters within the neural network.
@@ -34,4 +34,16 @@ The model was then compiled as such:
  - Determined adequate model parameters
  - Fit and evaluated the model
  
- ### Baseline Results
+### Baseline Results
+With 44 features, 16,000 trainable parameters across two hidden layers, and 150 epochs to iterate, the results are as follows:
+![Base_NN_Eval](https://user-images.githubusercontent.com/92493572/158045738-1c3fb070-6910-4928-8ef9-810089485bda.PNG)
+
+### Optimized Results
+Utilized 394 features, 1,100,000 trainable parameters, three hidden layers, and also 150 epochs, the results are as follows:
+
+
+
+
+#### What Changed During Optimization
+
+
