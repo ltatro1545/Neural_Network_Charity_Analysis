@@ -98,3 +98,4 @@ The random forest model performed about the same as the neural network with a lo
 --------------------------------
 
 ## Summary
+Overall, the neural network did a poor job, by many standards, in predicting whether funding money to a particular organization over another would pose less risk of the endeavor being fruitless. After further optimization, the accuracy increased from 72.5% to 78.6%, which is a sizeable increase, but still does not meet a par 85% accuracy standard. As stated previously, perhaps further investigating the ask amount could reveal a solution. In this case, the results suggest that the random forest method is about as effective at predicting results as the neural network model, all while providing feature importances.
